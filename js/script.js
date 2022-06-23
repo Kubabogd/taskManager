@@ -1,13 +1,19 @@
 {
+    const tasks = [
+    ];
     const clearField = () => {
         document.querySelector(".js-clearField").value = "";
     }
     const focus = () => {
         document.querySelector(".js-newTask").focus();
     }
+    
 
-    const tasks = [
-    ];
+
+
+
+
+    
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -53,10 +59,10 @@
         for (const task of tasks) {
             htmlString += ` 
             <li class="sectionTaskList__newTask"; 
-             ${task.done ? " style=\"text-decoration: line-through\"" : ""}
-        >
-        <button class="section__buttonDone js-done">${task.done ? "✓": ""}</button>
-        <span class="section__buttonDone--checked"> ${task.content}</span>
+            >
+            
+        <button class="section__buttonDone js-done">${task.done ? "✓" : ""}</button>
+        <span class="js-taskDone${task.done ? " section__buttonDone--checked " : ""}">${task.content}</span>
         <button class="section__buttonDelete js-remove">🗑</button>
         </li>
         `;

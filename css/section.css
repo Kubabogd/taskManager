@@ -53,7 +53,7 @@
     
 }
 
-.section__buttonDelete--checked{
+.section__buttonDone--checked{
     text-decoration: line-through;
 }
 
