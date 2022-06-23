@@ -1,0 +1,12 @@
+.body{
+    background-color: #eee;
+    margin: 30px auto;
+    word-break: break-word;
+}
+
+.body__main{
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+}

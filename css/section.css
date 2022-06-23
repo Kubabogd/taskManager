@@ -1,0 +1,69 @@
+.section__color {
+    background-color: white;
+    padding: 20px;
+    margin: 3px;
+}
+
+.sectionAddingTask {
+    margin: 10px 0px;
+}
+
+.sectionTaskList {
+    margin: 10px 0px;
+}
+
+.sectionTaskList__newTask {
+    border-bottom: 3px solid #eee;
+    padding: 10px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.sectionAddingTask__inputField {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 20px;
+    font-size: 18px;
+}
+
+.sectionAddingTask__height {
+    padding: 10px;
+}
+
+.sectionAddingTask__button {
+    background-color: teal;
+    color: white;
+    border: none;
+}
+
+.sectionTaskList__tasks {
+    padding: 0px;
+}
+
+.section__buttonDone {
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    color: white;
+    padding: 0;
+    border: none;
+    
+}
+
+.section__buttonDelete--checked{
+    text-decoration: line-through;
+}
+
+
+.section__buttonDelete {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(219, 84, 84);
+    color: white;
+    padding: 0;
+    border: none;
+
+}

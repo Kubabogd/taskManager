@@ -1,0 +1,10 @@
+html {
+    box-sizing: border-boxs;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    display: block;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
