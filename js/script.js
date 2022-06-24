@@ -7,13 +7,6 @@
     const focus = () => {
         document.querySelector(".js-newTask").focus();
     }
-    
-
-
-
-
-
-    
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
