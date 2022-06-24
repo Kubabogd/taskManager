@@ -1,0 +1,37 @@
+.sectionAddingTask {
+    margin: 10px 0px;
+}
+
+.sectionAddingTask__inputField {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 20px;
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .sectionAddingTask__inputField {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sectionAddingTask__height {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sectionAddingTask__button {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+.sectionAddingTask__height {
+    padding: 10px;
+}
+
+.sectionAddingTask__button {
+    background-color: teal;
+    color: white;
+    border: none;
+}

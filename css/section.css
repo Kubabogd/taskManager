@@ -4,61 +4,6 @@
     margin: 3px;
 }
 
-.sectionAddingTask {
-    margin: 10px 0px;
-}
-
-.sectionTaskList {
-    margin: 10px 0px;
-}
-
-.sectionTaskList__newTask {
-    border-bottom: 3px solid #eee;
-    padding: 10px;
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-gap: 10px;
-    align-items: center;
-}
-
-.sectionAddingTask__inputField {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-gap: 20px;
-    font-size: 18px;
-}
-
-@media (max-width: 767px) {
-    .sectionAddingTask__inputField {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .sectionAddingTask__height {
-        width: 100%;
-        text-align: center;
-    }
-
-    .sectionAddingTask__button {
-        width: 100%;
-        padding: 10px 0;
-    }
-}
-
-.sectionAddingTask__height {
-    padding: 10px;
-}
-
-.sectionAddingTask__button {
-    background-color: teal;
-    color: white;
-    border: none;
-}
-
-.sectionTaskList__tasks {
-    padding: 0px;
-}
 
 .section__buttonDone {
     width: 35px;
