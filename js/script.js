@@ -20,6 +20,7 @@
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
+        focus();
         render();
     }
 
