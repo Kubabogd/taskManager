@@ -1,9 +1,8 @@
-.section__color {
+.section__backgroundColor {
     background-color: white;
     padding: 20px;
     margin: 3px;
 }
-
 
 .section__buttonDone {
     width: 35px;
@@ -12,13 +11,22 @@
     color: white;
     padding: 0;
     border: none;
+}
+.section__headerWeight{
+    font-weight: 600;
+}
 
+.section__buttonDone:hover {
+    background-color: hsl(120, 100%, 30%);
+}
+
+.section__buttonDone:active {
+    background-color: hsl(120, 100%, 40%);
 }
 
 .section__buttonDone--checked {
     text-decoration: line-through;
 }
-
 
 .section__buttonDelete {
     width: 35px;
@@ -27,5 +35,12 @@
     color: white;
     padding: 0;
     border: none;
+}
 
+.section__buttonDelete:hover {
+    background-color: hsl(0, 65%, 65%);
+}
+
+.section__buttonDelete:active {
+    background-color: hsl(0, 65%, 70%);
 }

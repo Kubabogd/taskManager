@@ -35,3 +35,11 @@
     color: white;
     border: none;
 }
+
+.sectionAddingTask__button:hover {
+    background-color: hsl(180, 100%, 30%);
+}
+
+.sectionAddingTask__button:active {
+    background-color: hsl(180, 100%, 40%);
+}
