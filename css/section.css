@@ -1,3 +1,7 @@
+.section{
+    margin: 10px 0;
+}
+
 .section__backgroundColor {
     background-color: white;
     padding: 20px;

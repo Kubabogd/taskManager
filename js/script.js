@@ -2,25 +2,22 @@
     const tasks = [
     ];
     const clearField = () => {
-        document.querySelector(".js-clearField").value = "";
-    }
-    const focus = () => {
+        document.querySelector(".js-newTask").value = "";
         document.querySelector(".js-newTask").focus();
     }
+    
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
             content: newTaskContent,
         });
-        focus();
         clearField();
-
         render();
     };
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
-        focus();
+        clearField();
         render();
     }
 
