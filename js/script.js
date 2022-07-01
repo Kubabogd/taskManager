@@ -1,10 +1,11 @@
 {
-    let tasks = [
-    ];
+    let tasks = [];
+    let hideDoneTask = false;
     const clearField = () => {
         document.querySelector(".js-newTask").value = "";
         document.querySelector(".js-newTask").focus();
-    }
+    };
+
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -14,6 +15,7 @@
         clearField();
         render();
     };
+
     const removeTask = (taskIndex) => {
         tasks = [
             ...tasks.slice(0, taskIndex),
@@ -21,16 +23,20 @@
         ];
         clearField();
         render();
-    }
+    };
+
     let toggleTaskDone = (taskIndex) => {
         tasks = [
             ...tasks.slice(0, taskIndex),
-            { ...tasks[taskIndex],
-            done: !tasks[taskIndex].done},
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex].done
+            },
             ...tasks.slice(taskIndex + 1),
         ];
         render();
-    }
+    };
+
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButtons, index) => {
@@ -45,8 +51,9 @@
                 toggleTaskDone(index);
             });
         });
-    }
-    const render = () => {
+    };
+
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -60,9 +67,33 @@
         `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    };
+
+    const renderButtons = () => {
+        const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
+        const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
+        if (tasks.length == 0) {
+            taskHideDoneButton.classList.add("section__taskListHeaderButton--hide");
+            taskCheckedAllButton.classList.add("section__taskListHeaderButton--hide");
+        } else {
+            taskHideDoneButton.classList.remove("section__taskListHeaderButton--hide");
+            taskCheckedAllButton.classList.remove("section__taskListHeaderButton--hide");
+        }
+    };
+
+    const bindButtonsEvents = () => {
+
+    };
+
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
+        bindButtonsEvents();
     };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -73,6 +104,7 @@
         }
         addNewTask(newTaskContent);
     };
+
     const init = () => {
         render();
 
