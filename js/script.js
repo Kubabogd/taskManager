@@ -4,7 +4,7 @@
     const clearField = () => {
         document.querySelector(".js-newTask").value = "";
         document.querySelector(".js-newTask").focus();
-    };
+    }
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -16,19 +16,21 @@
     };
     const removeTask = (taskIndex) => {
         tasks = [
-            ...tasks.slice(taskIndex, taskIndex + 1)
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
         ];
         clearField();
         render();
-    };
-    const toggleTaskDone = (taskIndex) => {
+    }
+    let toggleTaskDone = (taskIndex) => {
         tasks = [
-            ...tasks.slice(taskIndex),
-            { ...tasks[taskIndex] },
-            ...tasks.slice(editIndex + 1)
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex],
+            done: !tasks[taskIndex].done},
+            ...tasks.slice(taskIndex + 1),
         ];
         render();
-    };
+    }
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButtons, index) => {
@@ -43,7 +45,7 @@
                 toggleTaskDone(index);
             });
         });
-    };
+    }
     const render = () => {
         let htmlString = "";
 
@@ -58,11 +60,14 @@
         `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
         bindEvents();
     };
     const onFormSubmit = (event) => {
         event.preventDefault();
+
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
+
         if (newTaskContent === "") {
             return;
         }
@@ -70,8 +75,21 @@
     };
     const init = () => {
         render();
+
         const form = document.querySelector(".js-form");
+
         form.addEventListener("submit", onFormSubmit);
     };
     init();
 }
+
+
+
+
+
+
+
+
+
+
+
