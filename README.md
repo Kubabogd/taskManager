@@ -10,5 +10,5 @@ https://kubabogd.github.io/taskManager/
 
 ## Adding and Removing Tasks
  
-![Task Manager Gif](images/taskManager.gif)
+![Task Manager Gif](images/taskManager2.gif)
 
