@@ -1,8 +1,8 @@
 {
     let tasks = [];
     let hideDoneTask = false;
-    
-    
+
+
     const clearField = () => {
         document.querySelector(".js-newTask").value = "";
         document.querySelector(".js-newTask").focus();
@@ -11,7 +11,7 @@
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent, done: false,},
+            { content: newTaskContent, done: false, },
         ];
         clearField();
         render();
@@ -45,17 +45,21 @@
         render();
     };
 
-const checkTasksLength = () => {
-    const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
-    const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
-    if (tasks.length == 0) {
-        taskHideDoneButton.classList.add("section__taskListHeaderButton--hide");
-        taskCheckedAllButton.classList.add("section__taskListHeaderButton--hide");
-    } else {
-        taskHideDoneButton.classList.remove("section__taskListHeaderButton--hide");
-        taskCheckedAllButton.classList.remove("section__taskListHeaderButton--hide");
-    }
-};
+
+
+
+
+    const checkTasksLength = () => {
+        const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
+        const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
+        if (tasks.length == 0) {
+            taskHideDoneButton.classList.add("section__taskListHeaderButton--hide");
+            taskCheckedAllButton.classList.add("section__taskListHeaderButton--hide");
+        } else {
+            taskHideDoneButton.classList.remove("section__taskListHeaderButton--hide");
+            taskCheckedAllButton.classList.remove("section__taskListHeaderButton--hide");
+        }
+    };
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -87,8 +91,17 @@ const checkTasksLength = () => {
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
+
+
     const renderButtons = () => {
         checkTasksLength();
+
+        const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
+        const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
+
+        taskCheckedAllButton.innerHTML = `
+        <button class="section__taskListHeaderButton js-taskCheckedAllButton"${tasks.every(({ done }) => done) ? " disabled ": ""} ">Ukończ wszystkie</button>
+        `;
     };
 
     const bindButtonsEvents = () => {
@@ -101,7 +114,6 @@ const checkTasksLength = () => {
             });
 
         });
-
     };
 
     const render = () => {
