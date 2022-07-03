@@ -1,4 +1,4 @@
-.section{
+.section {
     margin: 10px 0;
 }
 
@@ -8,19 +8,31 @@
     margin: 3px;
 }
 
-.section__buttonTaskList{
+.section__buttonTaskList {
     background-color: white;
     display: grid;
-    grid-template-columns:  1fr auto auto;
+    grid-template-columns: 1fr auto auto;
     gap: 20px;
     margin: 0 3px;
 }
-.section__taskListHeaderButton{
+
+.section__taskListHeaderButton {
     background-color: inherit;
     margin: 0px;
     padding: 10px;
     border: none;
+    transition: 1s;
+    color: teal;
 }
+
+.section__taskListHeaderButton:hover {
+    color: hsl(180, 100%, 35%);
+}
+.section__taskListHeaderButton:active {
+    color: hsl(180, 100%, 45%);
+}
+
+
 .section__buttonDone {
     width: 35px;
     height: 35px;
@@ -28,8 +40,10 @@
     color: white;
     padding: 0;
     border: none;
+    transition: 1s;
 }
-.section__headerWeight{
+
+.section__headerWeight {
     font-weight: 600;
     padding: 10px;
     margin: 3px;
@@ -54,6 +68,7 @@
     color: white;
     padding: 0;
     border: none;
+    transition: 1s;
 }
 
 .section__buttonDelete:hover {
@@ -64,6 +79,6 @@
     background-color: hsl(0, 65%, 70%);
 }
 
-.section__taskListHeaderButton--hide{
+.section__taskListHeaderButton--hide {
     display: none;
 }
