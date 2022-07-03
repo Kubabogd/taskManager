@@ -22,7 +22,7 @@
             ...tasks.slice(0, taskIndex),
             ...tasks.slice(taskIndex + 1),
         ];
-        clearField();
+        
         render();
     };
 

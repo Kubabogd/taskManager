@@ -16,6 +16,15 @@
     margin: 0 3px;
 }
 
+@media (max-width: 767px) {
+    .section__buttonTaskList {
+        display: flex;
+        flex-wrap: wrap;
+    }
+.section__taskListHeaderButton{
+    width: 100%;
+}
+}
 .section__taskListHeaderButton {
     background-color: inherit;
     margin: 0px;
