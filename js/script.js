@@ -1,16 +1,17 @@
 {
     let tasks = [];
     let hideDoneTask = false;
+    
+    
     const clearField = () => {
         document.querySelector(".js-newTask").value = "";
         document.querySelector(".js-newTask").focus();
     };
 
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent },
+            { content: newTaskContent, done: false,},
         ];
         clearField();
         render();
@@ -36,6 +37,25 @@
         ];
         render();
     };
+    const checkAllTaskDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+        render();
+    };
+
+const checkTasksLength = () => {
+    const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
+    const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
+    if (tasks.length == 0) {
+        taskHideDoneButton.classList.add("section__taskListHeaderButton--hide");
+        taskCheckedAllButton.classList.add("section__taskListHeaderButton--hide");
+    } else {
+        taskHideDoneButton.classList.remove("section__taskListHeaderButton--hide");
+        taskCheckedAllButton.classList.remove("section__taskListHeaderButton--hide");
+    }
+};
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -52,7 +72,6 @@
             });
         });
     };
-
     const renderTasks = () => {
         let htmlString = "";
 
@@ -68,23 +87,22 @@
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
-
     const renderButtons = () => {
-        const taskHideDoneButton = document.querySelector(".js-taskHideDoneButton");
-        const taskCheckedAllButton = document.querySelector(".js-taskCheckedAllButton");
-        if (tasks.length == 0) {
-            taskHideDoneButton.classList.add("section__taskListHeaderButton--hide");
-            taskCheckedAllButton.classList.add("section__taskListHeaderButton--hide");
-        } else {
-            taskHideDoneButton.classList.remove("section__taskListHeaderButton--hide");
-            taskCheckedAllButton.classList.remove("section__taskListHeaderButton--hide");
-        }
+        checkTasksLength();
     };
 
     const bindButtonsEvents = () => {
 
-    };
+        const taskCheckedAllButton = document.querySelectorAll(".js-taskCheckedAllButton");
 
+        taskCheckedAllButton.forEach((taskCheckedAllButton, index) => {
+            taskCheckedAllButton.addEventListener("click", () => {
+                checkAllTaskDone();
+            });
+
+        });
+
+    };
 
     const render = () => {
         renderTasks();
@@ -92,6 +110,7 @@
 
         bindEvents();
         bindButtonsEvents();
+
     };
 
     const onFormSubmit = (event) => {
@@ -114,14 +133,3 @@
     };
     init();
 }
-
-
-
-
-
-
-
-
-
-
-
