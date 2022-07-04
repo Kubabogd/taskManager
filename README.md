@@ -1,10 +1,10 @@
 # Task Manager
 
 ## Table of content
-- [Demo](##Demo)
-- [General info](##General_info)
-- [Task Manager](##Task-Manager)
-- [Technologies](##Technologies)
+- Demo
+- General info
+- Task Manager
+- Technologies
 
 ## Demo
 https://kubabogd.github.io/taskManager/
@@ -15,6 +15,11 @@ Task Manager online. You can easly add and remove your task. With this applicati
 ![Task Manager](images/share3.jpg)
 
 ## Adding and Removing Tasks
- 
 ![Task Manager Gif](images/taskManager2.gif)
 
+## Technologies
+- HTML
+- CSS
+- JS
+- ES6
+- BEM
