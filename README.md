@@ -2,8 +2,8 @@
 
 ## Table of content
 - [Demo](##Demo)
-- [General info](##General info)
-- [Task Manager](##Task Manager)
+- [General info](##General_info)
+- [Task Manager](##Task-Manager)
 - [Technologies](##Technologies)
 
 ## Demo
